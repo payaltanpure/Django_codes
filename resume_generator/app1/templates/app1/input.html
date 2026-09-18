@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="POST" action='/app1/resume/'>
+        {% csrf_token %}
+        <h1><center> Resume Details Form </center></h1>
+
+        <h1>Name</h1> 
+        <input type="text" name="name" required="required" placeholder="Enter your name">
+
+        <h1>Email</h1> 
+        <input type="email" name="email" required="required" placeholder="Enter your email">
+
+        <h1>Skills</h1> 
+        <input type="text" name="skills" required="required" placeholder="Enter your skills">
+
+        <h1>Mobile no</h1> 
+        <input type="number" name="mob_no" required="required" placeholder="Enter your Mobile-No">
+
+        <button>Register</button>
+
+    </form>
+</body>
+</html>

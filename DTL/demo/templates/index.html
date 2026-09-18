@@ -1,0 +1,130 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+
+
+    {% comment %} if we write variable names into html tags we have enclose it in {{}} right and outside html tag no need to enclose into {{}} {% endcomment %}
+
+    <h1> Welcome python to html file </h1>
+    <h1>{{name}}{{age}}</h1>
+    <hr>
+    {% if age >= 18  %} 
+
+    <h2 style="color: green;"> "Eligible for voting"</h2>
+    {% else %}
+    <h2 style="color: red;">"Not eligible for voting"</h2>
+    {% endif %} 
+    <hr>
+
+    <h1><ul>List of subjects</ul></h1>
+    {% for s in sub %}
+    <h3> {{s}} </h3>
+    
+    {% endfor %}
+
+
+</body>
+</html>
+
+{% comment %} 
+if we write variable names into html tags we have enclose it in {{}} right and outside html tag no need to enclose into {{}}
+
+Yes, exactly! You're understanding the Django template syntax correctly. Here's the rule:
+
+Rule 1: Inside HTML (displaying a variable)
+
+Whenever you want to print a variable's value on the webpage, use {{ }}.
+
+Example:
+
+<h1>{{ name }}</h1>
+<p>{{ age }}</p>
+<li>{{ s }}</li>
+
+If
+
+data = {
+    "name": "Ram",
+    "age": 20
+}
+
+Output:
+
+Ram
+20
+Rule 2: Outside HTML (template tags)
+
+When using Django template tags like if, for, block, extends, etc., do not use {{ }}.
+
+Correct
+{% if age >= 18 %}
+    Eligible
+{% endif %}
+{% for s in sub %}
+    {{ s }}
+{% endfor %}
+
+Notice:
+
+age → no {{ }}
+sub → no {{ }}
+
+because Django is evaluating them as variables in the template tag.
+
+Rule 3: Inside an if condition
+
+Correct:
+
+{% if age >= 18 %}
+
+Wrong:
+
+{% if {{ age }} >= 18 %}
+
+❌ This gives a template syntax error.
+
+Rule 4: Inside a for loop
+
+Correct:
+
+{% for s in sub %}
+
+Wrong:
+
+{% for {{ s }} in {{ sub }} %}
+
+❌ Not allowed.
+
+Rule 5: Printing the loop variable
+
+Inside the loop, if you want to display s, then use {{ }}.
+
+{% for s in sub %}
+    <li>{{ s }}</li>
+{% endfor %}
+
+Output:
+
+java
+python
+html
+Easy way to remember
+Purpose	Syntax	Example
+Print a variable	{{ }}	{{ name }}
+If statement	{% %}	{% if age >= 18 %}
+For loop	{% %}	{% for s in sub %}
+Print inside loop	{{ }}	{{ s }}
+End if	{% %}	{% endif %}
+End for	{% %}	{% endfor %}
+A simple memory trick
+{{ ... }} = "Show me the value."
+{% ... %} = "Do some logic (if, for, include, block, etc.)."
+
+This is the fundamental difference between the two types of Django template syntax, and you'll use it throughout Django development. {% endcomment %}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% comment %} pythin cde: django tags used  {% endcomment %}
+    
+    {% comment %} {% if age >= 18 %}
+        <h2 style="color: green;">Eligible for voting</h2>
+    {% else %}
+        <h2 style="color: red;">Not eleigible for voting</h2>
+    {% endif %} {% endcomment %}
+
+    
+    {% comment %} {% if marks >= 70 %}
+    <h1>A grade</h1>
+
+    {% elif marks >= 50 %}
+    <h1>B grade</h1>
+
+    {% elif marks >= 35 %}
+    <h1>C grade</h1>
+
+    {% else %}
+    <h1>Fail</h1>
+
+    {% endif %} {% endcomment %}
+
+
+    
+    {% if name == "admin" %}
+
+    {% comment %} print only message  {% endcomment %}
+    {% comment %} <h1>welcome to admin panel</h1> {% endcomment %}
+
+    {% comment %} open html file from other html file by include tag integrated in python code  {% endcomment %}
+    {% include "admin.html" %}
+
+    {% comment %} open html file by anchor tag {% endcomment %}
+    {% comment %} <a href="C:\Users\Payal\Desktop\Django_Framework\djangotags\djangoTags\templates\admin.html"></a> {% endcomment %}
+
+
+    {% else %}
+    <h1>welcome to user panel</h1>
+    {% endif %}
+        
+
+
+
+
+
+
+        
+
+
+
+        
+</body>
+</html>

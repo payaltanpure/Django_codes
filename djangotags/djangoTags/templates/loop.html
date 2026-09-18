@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>LIST OF NOS</h1>
+    
+    {% for i in list %}
+    <h1>{{i}}</h1>     
+    {% endfor %}
+
+    <hr>
+
+    <h1>LIST OF NAMES</h1>
+    
+    {% for i in names %}
+    <h1>{{i}}</h1>     
+    {% endfor %}
+
+    <hr>
+
+    <h1>LIST OF FRUITNAMES</h1>
+    
+    <ul type="circle">
+
+    {% for i in fruitname %}
+    <li>{{i}}</li>   
+    {% endfor %}
+    
+    </ul>
+
+    <ol>
+
+    {% for i in fruitname %}
+    <li>{{i}}</li>   
+    {% endfor %}
+
+    </ol>
+
+    <hr>
+
+    <h1> CAR NAME</h1>
+
+    
+    {% for i in carname %}
+    <h1>{{i}}</h1>
+    {% endfor %}
+
+
+    <h1>Nested for loop</h1>
+    {% for items in i %}
+        {% for nos in j %}
+           <h2>{{items}}- {{nos}}</h2>
+        {% endfor %}
+    {% endfor %}
+
+    <hr>
+    <h1>LOOP THROUGH DICTIONARY</h1>
+    {% for key , val in stud.items %}
+       <h2>{{key}} - {{val}}</h2>
+    {% endfor%}
+
+
+        
+        
+</body>
+</html>

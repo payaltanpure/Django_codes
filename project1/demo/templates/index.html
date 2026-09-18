@@ -1,0 +1,34 @@
+<!-- link static folder load it  -->
+{% load static %} 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- link style.css file of css folder from static folder -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    {% comment %} internal css {% endcomment %}
+    <style>
+        body{
+            background-color:aqua;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hello i am index.html</h1>
+    {% comment %} inline css {% endcomment %}
+    <h2 style="border: 2px solid red "> Hello inline css</h2>
+
+    <hr>
+    {% comment %} added image into body not as background {% endcomment %}
+    <img src= "{% static 'assets/image.png' %}">
+    <hr>
+
+    {% comment %} js funstion called in onclick {% endcomment %}
+    <button onclick="get_value()">click me</button>
+
+    {% comment %} js file linked here  {% endcomment %}
+    <script src="{% static 'js/external.js' %}"></script>
+</body>
+</html>

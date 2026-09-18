@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% comment %} navbar  {% endcomment %}
+    <h1>navbar</h1>
+
+       <a href="{% url 'index2' %}">for you</a>
+       <a href="{% url 'mobile' %}">Mobile</a>
+       <a href="{% url 'beauty' %}">Beauty</a>
+       
+       {% comment %} this block is declared in parent class to put the content of child class which calls this parent class in this block declare same block in child class also with same name child classes are mobile and beauty which are extending parent class base.html to keep the html page content common on all html pages   {% endcomment %}
+       {% block content %}
+        
+       {% endblock %}
+       <h1>Footer</h1>
+
+       {% comment %} first block will be replaced by index2.html file content then as per we click on anchor tag that page's content is replaced here by keeping all other base.html content as common on all pages  {% endcomment %}
+
+    
+        
+</body>
+</html>

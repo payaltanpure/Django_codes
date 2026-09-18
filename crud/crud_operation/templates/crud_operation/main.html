@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>All Students</title>
+</head>
+
+<body>
+
+<h1>All Students</h1>
+
+<table border="1">
+
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Marks</th>
+        <th>Action</th>
+    </tr>
+
+    {% for s in students %}
+
+    <tr>
+
+        <td>{{ s.id }}</td>
+
+        <td>{{ s.name }}</td>
+
+        <td>{{ s.marks }}</td>
+
+        <td>
+
+            <a href="{% url 'delete' s.id %}">
+                <button>Delete</button>
+            </a>
+
+            <a href="{% url 'update' s.id %}">
+                <button>Update</button>
+            </a>
+
+            <a href="{% url 'fetch' s.id %}">
+                <button>View</button>
+            </a>
+
+        </td>
+
+    </tr>
+
+    {% endfor %}
+
+</table>
+
+</body>
+
+</html>

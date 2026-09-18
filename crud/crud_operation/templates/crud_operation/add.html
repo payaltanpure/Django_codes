@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-success">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+    <form method="POST" action="">
+        {% csrf_token %}
+        Name:<input type="text" name="name" placeholder="Enter your name">
+        Marks:<input type="number" name="marks" placeholder="Enter your marks">
+        <button>ADD</button>
+
+    </form>
+</body>
+</html>

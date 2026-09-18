@@ -1,0 +1,10 @@
+h1{
+    color: blue;
+}
+
+/* background image set using external css */
+/* body {
+    background-image: url("../image.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+} */
